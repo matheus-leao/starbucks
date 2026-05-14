@@ -1,5 +1,5 @@
 import assert from 'node:assert'
-import {contabilizarQuantidadeDeCafe, contabilizarQuantidadeDeItems} from '../src/starbucks.js'
+import {contabilizarQuantidadeDeItems} from '../src/starbucks.js'
 
 describe('Testes para gestão de cafeteria', function(){
     it('TC 1 - Ao menos 1 café na lista', function(){
@@ -10,11 +10,12 @@ describe('Testes para gestão de cafeteria', function(){
             {nome: "bolo de cenoura", valor: 12.00},
             {nome: "café com leite", valor: 5.00}
         ]
+        const itemPesquisado = "café"
         // Saída da função
         const retornoEsperado = 1
 
         // Act -> Ação
-        const quantidadeDeCafes = contabilizarQuantidadeDeCafe(listaPedidos)
+        const quantidadeDeCafes = contabilizarQuantidadeDeItems(itemPesquisado,listaPedidos)
 
         // Assert -> Asserção 
         assert.equal(retornoEsperado, quantidadeDeCafes)
@@ -27,11 +28,12 @@ describe('Testes para gestão de cafeteria', function(){
             {nome: "bolo de cenoura", valor: 12.00},
             {nome: "café com leite", valor: 5.00}
         ]
+        const itemPesquisado = "café"
         // Saída da função
         const retornoEsperado = 0
 
         // Act -> Ação
-        const quantidadeDeCafes = contabilizarQuantidadeDeCafe(listaPedidos)
+        const quantidadeDeCafes = contabilizarQuantidadeDeItems(itemPesquisado,listaPedidos)
 
         // Assert -> Asserção 
         assert.equal(retornoEsperado, quantidadeDeCafes)
@@ -46,11 +48,12 @@ describe('Testes para gestão de cafeteria', function(){
             {nome: "café com leite", valor: 5.00},
             {nome: "café", valor: 4.00}, 
         ]
+        const itemPesquisado = "café"
         // Saída da função
         const retornoEsperado = 2
 
         // Act -> Ação
-        const quantidadeDeCafes = contabilizarQuantidadeDeCafe(listaPedidos)
+        const quantidadeDeCafes = contabilizarQuantidadeDeItems(itemPesquisado,listaPedidos)
 
         // Assert -> Asserção 
         assert.equal(retornoEsperado, quantidadeDeCafes)
@@ -60,11 +63,12 @@ describe('Testes para gestão de cafeteria', function(){
         // Arrange -> Organizar ou Arranjar
         // Entrada da função
         const listaPedidos = [ ]
+        const itemPesquisado = "café"
         // Saída da função
         const retornoEsperado = 0
 
         // Act -> Ação
-        const quantidadeDeCafes = contabilizarQuantidadeDeCafe(listaPedidos)
+        const quantidadeDeCafes = contabilizarQuantidadeDeItems(itemPesquisado, listaPedidos)
 
         // Assert -> Asserção 
         assert.equal(retornoEsperado, quantidadeDeCafes)
