@@ -7,3 +7,13 @@ export function contabilizarQuantidadeDeCafe(listaPedidos){
     }
     return quantidadeCafe;
 }
+
+export function contabilizarQuantidadeDeItems(itemEsperado, listaPedidos){
+    let quantidadeItemEsperado = 0
+    for (let i = 0; i < listaPedidos.length; i++) {
+        if(listaPedidos[i].nome == itemEsperado){
+            quantidadeItemEsperado++;
+        }
+    }
+    return quantidadeItemEsperado
+}
